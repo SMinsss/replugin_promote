@@ -1,0 +1,18 @@
+include ':replugin-host-gradle'
+project(':replugin-host-gradle').projectDir = new File('rp/replugin-host-gradle')
+include ':replugin-host-lib'
+project(':replugin-host-lib').projectDir = new File('rp/replugin-host-library/replugin-host-lib')
+include ':replugin-plugin-gradle'
+project(':replugin-plugin-gradle').projectDir = new File('rp/replugin-plugin-gradle')
+include ':replugin-plugin-lib'
+project(':replugin-plugin-lib').projectDir = new File('rp/replugin-plugin-library/replugin-plugin-lib')
+include ':host'
+project(':host').projectDir = new File('rp/replugin-sample/host/app')
+include ':plugin-demo1'
+project(':plugin-demo1').projectDir = new File('rp/replugin-sample/plugin/plugin-demo1/app')
+include ':plugin-demo2'
+project(':plugin-demo2').projectDir = new File('rp/replugin-sample/plugin/plugin-demo2/app')
+
+include ':app'
+include ':plugin_one'
+include ':plugin_two'

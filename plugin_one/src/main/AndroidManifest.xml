@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ssjjsy.sdk.plugin.one">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="process_map"
+            android:value="[
+            {'from':'com.ssjjsy.sdk.plugin.one:process1','to':'$p0'}
+            ]" />
+        
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    
+
+        <!-- TaskAffinity -->
+        <activity
+            android:name="com.ssjjsy.sdk.plugin.one.activity.taskAffinity.TAActivity1"
+            android:launchMode="singleTask"
+            android:taskAffinity=":ta_1"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        
+        <activity android:name="com.ssjjsy.sdk.plugin.one.activity.process.ProcessActivity1"
+            android:process=":process1"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        
+    </application>
+
+</manifest>

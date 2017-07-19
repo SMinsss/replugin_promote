@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        applicationId 'com.ssjjsy.sdk.plugin.two'
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+apply plugin: 'replugin-plugin-gradle'
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile project(':replugin-plugin-lib')
+}
+
+afterEvaluate {
+    android.applicationVariants.all { variant->
+        def assembleTask = variant.assemble
+        if(assembleTask != null) {
+            assembleTask.doLast {
+                variant.outputs.each { out->
+                    println '-----------------aR task output name '  + out.outputFile.name
+                    println '-----------------aR task output as name '  + out.outputFile.absolutePath
+                    if(out.outputFile.name.contains('unsigned')) {
+                        println '-----------------out.outputFile.name.contains(\'unsigned\')'
+                        copy {
+                            from out.outputFile.absolutePath
+                            into project(':app').getProjectDir().absolutePath + '/src/main/assets/plugins/'
+                            rename(out.outputFile.name, project.name + '.apk')
+                        }
+                    }
+                 }
+            }
+        }
+    }
+
+}
