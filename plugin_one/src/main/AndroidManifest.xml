@@ -27,7 +27,7 @@
 
         <!-- TaskAffinity -->
         <activity
-            android:name="com.ssjjsy.sdk.plugin.one.activity.taskAffinity.TAActivity1"
+            android:name="com.ssjjsy.sdk.plugin.one.activity.taskaffinity.TAActivity1"
             android:launchMode="singleTask"
             android:taskAffinity=":ta_1"
             android:theme="@android:style/Theme.Black.NoTitleBar" />

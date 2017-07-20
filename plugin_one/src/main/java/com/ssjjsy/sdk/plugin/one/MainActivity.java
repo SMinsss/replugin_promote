@@ -1,14 +1,14 @@
 package com.ssjjsy.sdk.plugin.one;
 
 import android.content.Intent;
-import android.os.Process;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.qihoo360.replugin.RePlugin;
 import com.ssjjsy.sdk.plugin.one.activity.process.ProcessActivity1;
-import com.ssjjsy.sdk.plugin.one.activity.taskAffinity.TAActivity1;
+import com.ssjjsy.sdk.plugin.one.activity.taskaffinity.TAActivity1;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, ProcessActivity1.class);
                 startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.btn_activity_Plugin2MainActivity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RePlugin.startActivity(MainActivity.this, RePlugin.createIntent("plugin_two", "com.ssjjsy.sdk.plugin.two.MainActivity"));
             }
         });
     }

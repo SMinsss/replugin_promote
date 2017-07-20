@@ -1,6 +1,4 @@
-package com.ssjjsy.sdk.plugin.one.activity.taskAffinity;
-
-import android.app.Activity;
+package com.ssjjsy.sdk.plugin.one.activity.taskaffinity;
 
 import com.ssjjsy.sdk.plugin.one.activity.BaseActivity;
 

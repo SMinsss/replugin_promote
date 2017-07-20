@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Process;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.View;
 
 import com.ssjjsy.sdk.plugin.one.activity.BaseActivity;
 
@@ -22,6 +23,13 @@ public class ProcessActivity1 extends BaseActivity{
         String processName = getCurrentProcessName();
         int pid = Process.myPid();
         Log.i("SM", "Current process: " + processName + " ,pid: " + pid);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     private static String getCurrentProcessName() {
