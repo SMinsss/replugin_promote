@@ -5,7 +5,9 @@ import android.os.Process;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
+import com.qihoo360.replugin.RePlugin;
 import com.ssjjsy.sdk.plugin.one.activity.BaseActivity;
 
 import java.io.FileInputStream;
@@ -24,12 +26,23 @@ public class ProcessActivity1 extends BaseActivity{
         int pid = Process.myPid();
         Log.i("SM", "Current process: " + processName + " ,pid: " + pid);
 
+        btn.setText("Start pluginTwo same process activity");
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                RePlugin.startActivity(ProcessActivity1.this, RePlugin.createIntent("plugin_two", "com.ssjjsy.sdk.plugin.two.activity.forplugin1.ProcessActivity1"));
             }
         });
+
+        Button btn2 = addOneButton();
+        btn2.setText("Start pluginTwo another process activity");
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RePlugin.startActivity(ProcessActivity1.this, RePlugin.createIntent("plugin_two", "com.ssjjsy.sdk.plugin.two.activity.forplugin1.ProcessActivity2"));
+            }
+        });
+
     }
 
     private static String getCurrentProcessName() {

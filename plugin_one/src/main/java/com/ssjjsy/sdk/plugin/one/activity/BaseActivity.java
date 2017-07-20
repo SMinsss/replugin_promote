@@ -1,9 +1,11 @@
 package com.ssjjsy.sdk.plugin.one.activity;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -22,7 +24,6 @@ public class BaseActivity extends Activity {
 
     protected Button btn;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,18 @@ public class BaseActivity extends Activity {
         btn = (Button) findViewById(R.id.btn);
 
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
+    }
+
+    protected Button addOneButton() {
+        Button button = new Button(this);
+        button.setTextColor(Color.WHITE);
+        button.setBackgroundColor(Color.BLACK);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+        lp.setMargins(0, 20, 0, 0);
+        linearLayout.addView(button, lp);
+        return button;
     }
 
 }
