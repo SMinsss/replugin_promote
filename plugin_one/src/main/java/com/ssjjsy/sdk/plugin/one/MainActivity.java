@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.qihoo360.replugin.RePlugin;
-import com.ssjjsy.sdk.plugin.one.activity.process.ProcessActivity1;
+import com.ssjjsy.sdk.plugin.one.activity.process.ProcessActivity0;
 import com.ssjjsy.sdk.plugin.one.activity.taskaffinity.TAActivity1;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, ProcessActivity1.class);
+                intent.setClass(MainActivity.this, ProcessActivity0.class);
                 startActivity(intent);
             }
         });

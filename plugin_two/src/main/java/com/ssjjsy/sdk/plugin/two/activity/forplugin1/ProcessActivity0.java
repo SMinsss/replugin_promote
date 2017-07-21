@@ -7,14 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import com.ssjjsy.sdk.plugin.two.activity.BaseActivity;
 
 /**
- * Created by Administrator on 2017/7/20.
+ * Created by shim on 2017/7/21.
  */
 
-public class NormalActivity1 extends BaseActivity {
+public class ProcessActivity0 extends BaseActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
 }

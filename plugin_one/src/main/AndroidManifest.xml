@@ -13,7 +13,7 @@
         <meta-data
             android:name="process_map"
             android:value="[
-            {'from':'com.ssjjsy.sdk.plugin.one:process1','to':'$p0'}
+            {'from':'com.ssjjsy.sdk.plugin.one:process0','to':'$p0'}
             ]" />
         
         <activity android:name=".MainActivity">
@@ -29,12 +29,10 @@
         <activity
             android:name="com.ssjjsy.sdk.plugin.one.activity.taskaffinity.TAActivity1"
             android:launchMode="singleTask"
-            android:taskAffinity=":ta_1"
-            android:theme="@android:style/Theme.Black.NoTitleBar" />
+            android:taskAffinity=":ta_1" />
         
-        <activity android:name="com.ssjjsy.sdk.plugin.one.activity.process.ProcessActivity1"
-            android:process=":process1"
-            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity android:name="com.ssjjsy.sdk.plugin.one.activity.process.ProcessActivity0"
+            android:process=":process0"/>
         
     </application>
 

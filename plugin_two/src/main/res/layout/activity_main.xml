@@ -14,7 +14,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
+            android:padding="10dp"
             android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
@@ -26,19 +26,19 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
+            android:padding="10dp"
             android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NoNoNo"
+                android:text="Normal"
                 android:textColor="@color/colorPrimaryDark"/>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="4dp"
                 android:background="@android:color/transparent"/>
             <Button
-                android:id="@+id/btn_activity_TAActivity1"
+                android:id="@+id/btn_activity_normal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Start Activity"
@@ -50,19 +50,19 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
+            android:padding="10dp"
             android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Yeah"
+                android:text="Back to plugin one"
                 android:textColor="@color/colorPrimaryDark"/>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="4dp"
                 android:background="@android:color/transparent"/>
             <Button
-                android:id="@+id/btn_activity_ProcessActivity1"
+                android:id="@+id/btn_activity_backToPluginOne"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Start Activity"
@@ -71,6 +71,54 @@
                 />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Same process to plugin one :p0"
+                android:textColor="@color/colorPrimaryDark"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@android:color/transparent"/>
+            <Button
+                android:id="@+id/btn_activity_sameProcessToPluginOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start Activity"
+                android:background="@android:color/black"
+                android:textColor="@android:color/white"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other process to plugin one :p1"
+                android:textColor="@color/colorPrimaryDark"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@android:color/transparent"/>
+            <Button
+                android:id="@+id/btn_activity_otherProcessToPluginOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start Activity"
+                android:background="@android:color/black"
+                android:textColor="@android:color/white"
+                />
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>
