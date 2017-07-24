@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add inflate xml"
-        style="@style/pluginOneButton"
+        android:background="@android:color/black"
+        android:textColor="@android:color/white"
         />
     <Button
         android:layout_marginTop="20dp"
@@ -18,15 +19,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add view"
-        style="@style/pluginOneButton"/>
+        android:background="@android:color/black"
+        android:textColor="@android:color/white"/>
     <Button
         android:layout_marginTop="20dp"
         android:id="@+id/btn_remove_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Remove view"
-        style="@style/pluginOneButton"/>
-
+        android:background="@android:color/black"
+        android:textColor="@android:color/white"/>
     <FrameLayout
         android:layout_marginTop="36dp"
         android:id="@+id/container"

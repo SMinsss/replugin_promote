@@ -95,6 +95,30 @@
                 />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plugin two image activity"
+                android:textColor="@color/colorPrimaryDark"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@android:color/transparent"/>
+            <Button
+                android:id="@+id/btn_activity_pluginTwoImageActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start Activity"
+                android:background="@android:color/black"
+                android:textColor="@android:color/white"
+                />
+        </LinearLayout>
+
     </LinearLayout>
 
 </ScrollView>
