@@ -3,6 +3,7 @@
     package="com.ssjjsy.sdk.plugin.two">
 
     <application
+        android:name=".PluginTwpApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,7 +15,9 @@
             android:name="process_map"
             android:value="[
             {'from':'com.ssjjsy.sdk.plugin.two:process0','to':'$p0'},
-            {'from':'com.ssjjsy.sdk.plugin.two:process1','to':'$p1'}]" />
+            {'from':'com.ssjjsy.sdk.plugin.two:process1','to':'$p1'},
+            {'from':'com.ssjjsy.sdk.plugin.two:process2','to':'$p0'}
+            ]" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -28,6 +31,8 @@
             android:process=":process0" />
         <activity android:name="com.ssjjsy.sdk.plugin.two.activity.forplugin1.ProcessActivity1"
             android:process=":process1" />
+        <activity android:name="com.ssjjsy.sdk.plugin.two.activity.forplugin1.ProcessActivity2"
+            android:process=":process2" />
     </application>
 
 </manifest>

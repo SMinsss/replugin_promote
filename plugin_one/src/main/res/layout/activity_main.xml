@@ -62,7 +62,7 @@
                 android:layout_height="4dp"
                 android:background="@android:color/transparent"/>
             <Button
-                android:id="@+id/btn_activity_ProcessActivity1"
+                android:id="@+id/btn_activity_ProcessActivity0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Start Activity"

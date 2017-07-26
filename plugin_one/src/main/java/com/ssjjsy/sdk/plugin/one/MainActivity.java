@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.btn_activity_ProcessActivity1).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_activity_ProcessActivity0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
