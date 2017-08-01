@@ -7,6 +7,9 @@ import android.util.Log;
 import android.view.View;
 
 import com.qihoo360.replugin.RePlugin;
+import com.qihoo360.replugin.common.utils.TimeUtils;
+import com.sm.LogUtil;
+import com.ssjjsy.sdk.demo.classloader.TestA;
 import com.ssjjsy.sdk.plugin.one.activity.fetchview.PluginTwoImageActivity;
 import com.ssjjsy.sdk.plugin.one.activity.process.ProcessActivity0;
 import com.ssjjsy.sdk.plugin.one.activity.taskaffinity.TAActivity1;
@@ -51,6 +54,30 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, PluginTwoImageActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.btn_test_classloader).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LogUtil.i("ClassLoader name: " + getClassLoader().getClass().getSimpleName());
+                ClassLoader loader = getClassLoader();
+                try {
+                    loader.loadClass("com.ssjjsy.sdk.demo.classloader.TestA");
+                    LogUtil.i("loadClass1 success");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                try {
+                    loader.loadClass("com.qihoo360.replugin.common.utils.TimeUtils");
+                    LogUtil.i("loadClass2 success");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                LogUtil.i("Time: " + TimeUtils.getNowString());
+                LogUtil.i("btn_test1");
+                TestA testA = new TestA();
+                LogUtil.i("btn test2");
             }
         });
     }

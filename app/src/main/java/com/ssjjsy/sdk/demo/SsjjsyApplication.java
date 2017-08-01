@@ -33,7 +33,7 @@ public class SsjjsyApplication extends RePluginApplication {
 
         config.setEventCallbacks(mEventCallbacks);
 
-        return super.createConfig();
+        return config;
     }
 
     private RePluginEventCallbacks mEventCallbacks = new RePluginEventCallbacks(this) {
