@@ -1,0 +1,14 @@
+apply plugin: 'groovy'
+
+repositories {
+    //jcenter()
+    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+    jcenter()
+}
+
+dependencies {
+    compile gradleApi()//gradle sdk
+    compile localGroovy()//groovy sdk
+}
+
+apply from: 'provided.gradle'

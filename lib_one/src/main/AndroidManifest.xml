@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ssjjsy.sdk.plugin.two">
+
+    <application
+        android:name=".PluginTwpApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="process_map"
+            android:value="[
+            {'from':'com.ssjjsy.sdk.plugin.two:process0','to':'$p0'},
+            {'from':'com.ssjjsy.sdk.plugin.two:process1','to':'$p1'},
+            {'from':'com.ssjjsy.sdk.plugin.two:process2','to':'$p0'}
+            ]" />
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.ssjjsy.sdk.plugin.two.activity.forplugin1.NormalActivity0" />
+        <activity android:name="com.ssjjsy.sdk.plugin.two.activity.forplugin1.ProcessActivity0"
+            android:process=":process0" />
+        <activity android:name="com.ssjjsy.sdk.plugin.two.activity.forplugin1.ProcessActivity1"
+            android:process=":process1" />
+        <activity android:name="com.ssjjsy.sdk.plugin.two.activity.forplugin1.ProcessActivity2"
+            android:process=":process2" />
+    </application>
+
+</manifest>

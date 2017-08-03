@@ -1,0 +1,2 @@
+// 不加这个，会报Class already exists的错误
+rootProject.name = 'ssjjsy-gradle'

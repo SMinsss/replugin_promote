@@ -16,3 +16,4 @@ project(':replugin-plugin-lib').projectDir = new File('../rp/replugin-plugin-lib
 include ':app'
 include ':plugin_one'
 include ':plugin_two'
+//include ':aar_one'

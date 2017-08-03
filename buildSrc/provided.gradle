@@ -1,0 +1,26 @@
+// https://stackoverflow.com/questions/25040445/which-is-the-proper-gradle-plugin-to-support-provided-method
+configurations {
+    provided
+}
+
+sourceSets {
+    main {
+        compileClasspath += configurations.provided
+    }
+}
+
+dependencies {
+    compile 'org.fusesource.jansi:jansi:1.8'
+    compile 'org.tmatesoft.svnkit:svnkit:1.8.11'
+
+    println 'projectDir: ' + gradle.startParameter.projectDir
+// 必须加上这里，否则编译时会找不到Gradle的类
+    if (gradle.startParameter.projectDir == project.projectDir) {
+        // gradlew -p buildSrc xx
+        println '----------------------provided gradle plugin----------------------'
+        provided 'com.android.tools.build:gradle:2.3.0'
+    } else {
+        println '----------------------compile gradle plugin----------------------'
+        compile 'com.android.tools.build:gradle:2.3.0'
+    }
+}
