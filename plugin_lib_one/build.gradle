@@ -27,5 +27,5 @@ repositories {
 
 dependencies {
     compile 'com.android.support:appcompat-v7:25.3.0'
-
+    compile project(':lib_one')
 }

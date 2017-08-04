@@ -28,10 +28,12 @@ public class TaskUtils {
         if (key == null || dir == null) return
 
         outDirs.put(key, dir)
+        Log.header("module.path(key): ${aarPath.module.path}")
+        Log.header("dir: ${dir}")
+        Log.header("    ")
     }
 
     public static AarPath getBuildCache(PrepareLibraryTask task){
-        Log.header 'getBuildCache'
         File explodedDir
         if (task.hasProperty("explodedDir")) {
             explodedDir = (File) task.properties["explodedDir"]
@@ -44,7 +46,6 @@ public class TaskUtils {
                 throw new RuntimeException("[${task.project.name}] Cannot get 'explodedDir' from task $task.name")
             }
         }
-        Log.header "explodedDir: ${explodedDir.absolutePath}"
         return new AarPath(task.project, explodedDir)
     }
 

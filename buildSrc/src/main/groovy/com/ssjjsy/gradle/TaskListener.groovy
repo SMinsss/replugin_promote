@@ -9,6 +9,8 @@ import org.gradle.api.invocation.Gradle
 import org.gradle.api.tasks.TaskState
 import org.gradle.util.Clock;
 
+import com.ssjjsy.gradle.util.Log
+
 /**
  * Created by Administrator on 2017/6/30.
  */
@@ -41,10 +43,10 @@ public class TaskListener implements TaskExecutionListener, BuildListener {
     @Override
     void buildFinished(BuildResult buildResult) {
         // After all gradle task execute
-        Log.header "--------------------All Task spend time--------------------"
-        times.each {time ->
-            Log.success("task ${time[1]} spend time: ${time[0]} ms")
-        }
+//        Log.header "--------------------All Task spend time--------------------"
+//        times.each {time ->
+//            Log.success("task ${time[1]} spend time: ${time[0]} ms")
+//        }
     }
 
     @Override
@@ -56,13 +58,16 @@ public class TaskListener implements TaskExecutionListener, BuildListener {
     void afterExecute(Task task, TaskState taskState) {
         def ms = clock.timeInMs
         times.add([ms, task.path])
-        Log.header "task ${task.path}" + " , spend time: ${ms} ms"
-        task.inputs.files.files.each {inputFile->
-            Log.success "input: ${inputFile.absolutePath}"
-        }
-        Log.warn('Next show output')
-        task.outputs.files.files.each {outputFile->
-            Log.success "output: ${outputFile.absolutePath}"
+        if(task.name.startsWith("transform")) {
+            Log.header "task ${task.path}" + " , spend time: ${ms} ms"
+            task.inputs.files.files.each {inputFile->
+                Log.success "input: ${inputFile.absolutePath}"
+            }
+            Log.warn('Next show output')
+            task.outputs.files.files.each {outputFile->
+                Log.success "output: ${outputFile.absolutePath}"
+            }
         }
     }
+
 }

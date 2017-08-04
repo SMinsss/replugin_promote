@@ -13,6 +13,9 @@ public class OneExtension extends AndroidExtension {
     /** Map of build-cache file */
     Map buildCaches
 
+    /** Paths of aar to split */
+    Set<Map> splitAars
+
     public OneExtension(Project project) {
         super(project);
     }

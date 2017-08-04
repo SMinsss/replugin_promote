@@ -48,6 +48,9 @@ public class AndroidPlugin extends BasePlugin {
         project.afterEvaluate {
             afterEvaluate(released)
 
+            // com.android.library没有这个属性
+            if(!android.hasProperty('applicationVariants')) return
+
             android.applicationVariants.all { BaseVariant variant ->
                 Log.header 'variant name: ' + variant.name
                 if(variant.buildType.minifyEnabled) {

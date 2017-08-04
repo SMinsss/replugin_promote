@@ -38,7 +38,7 @@ public class RootPlugin extends BasePlugin {
     protected void configureProject() {
         super.configureProject()
 
-        //project.gradle.addListener(new TaskListener())
+        project.gradle.addListener(new TaskListener())
 
         def rootExt = syext
 
@@ -77,6 +77,7 @@ public class RootPlugin extends BasePlugin {
                     rootExt.demoProject = it
                 } else if(it.name.startsWith('plugin_lib')) {
                     // 在plugin_之前
+                    //it.apply plugin: LibPlugin
                     rootExt.pluginLibProjects.add(it)
                 } else if(it.name.startsWith('plugin_')) {
                     //it.apply plugin: AppPlugin

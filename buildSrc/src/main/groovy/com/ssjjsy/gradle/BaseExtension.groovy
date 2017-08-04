@@ -8,6 +8,8 @@ import org.gradle.api.Project
  */
 public class BaseExtension {
 
+    public static final String FD_INTERMEDIATES = "intermediates"
+
     Project project
 
     public BaseExtension(Project project) {

@@ -33,7 +33,10 @@ dependencies {
     compile project(':replugin-plugin-lib')
     provided files('libs/common-utils-lib-1.0.0.jar')//这个jar就是从Host的utils中编译生成的，其目的是为了骗过编译期
     provided files('libs/TestA.jar')
+    compile files('libs/fnsdk_for_tester.jar')
     compile(name:'aar_one-release', ext:'aar')
+    compile(name:'aar_two', ext:'aar')
+    compile project(':plugin_lib_one')
 }
 
 afterEvaluate {
